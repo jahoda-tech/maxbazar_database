@@ -143,3 +143,11 @@ type ItemWatchlistRecord struct {
 	Item   Item
 	Note   string
 }
+
+type Setting struct {
+	gorm.Model
+	Name    string `gorm:"uniqueIndex:unique_settings"`
+	Value   string
+	Enabled bool `gorm:"default:true"`
+	Note    string
+}
