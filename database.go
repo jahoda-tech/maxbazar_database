@@ -48,6 +48,7 @@ type ItemType struct {
 	Name             string `gorm:"uniqueIndex:unique_item_type"`
 	ParentItemTypeID int
 	Data             datatypes.JSON
+	Url              string `gorm:"uniqueIndex:unique_item_type"`
 	Note             string
 }
 
