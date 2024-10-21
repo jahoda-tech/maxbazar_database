@@ -50,6 +50,8 @@ type ItemType struct {
 	CategoryDepth    int    `gorm:"uniqueIndex:unique_item_type"`
 	Data             datatypes.JSON
 	Url              string `gorm:"uniqueIndex:unique_item_type"`
+	Count            int
+	Enabled          bool `gorm:"default:true"`
 	Note             string
 }
 
