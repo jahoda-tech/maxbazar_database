@@ -65,9 +65,11 @@ type PriceType struct {
 type Item struct {
 	gorm.Model
 	Heading             string `gorm:"uniqueIndex:unique_item"`
-	Text                string
+	Description         string
 	UserID              int `gorm:"uniqueIndex:unique_item"`
 	User                User
+	TemporaryEmail      string
+	TemporaryPhone      string
 	ItemTypeID          int
 	ItemType            ItemType
 	PriceTypeID         int
@@ -78,10 +80,11 @@ type Item struct {
 	DeleteAfter         sql.NullTime
 	DecreasePriceAfter  sql.NullTime
 	DecreasePriceAmount float64
-	Description         string
 	Location            string
 	TemporaryPassword   string
 	Public              bool
+	Premium             bool
+	PremiumDateTime     time.Time
 	Note                string
 }
 
