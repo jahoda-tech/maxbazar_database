@@ -162,6 +162,6 @@ type Setting struct {
 type Ruian struct {
 	gorm.Model
 	PostalCode string `gorm:"uniqueIndex:unique_ruian"`
-	Location   string
+	Location   string `gorm:"uniqueIndex:unique_ruian"`
 	Note       string
 }
