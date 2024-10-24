@@ -163,5 +163,7 @@ type Ruian struct {
 	gorm.Model
 	PostalCode string `gorm:"uniqueIndex:unique_ruian"`
 	Location   string `gorm:"uniqueIndex:unique_ruian"`
+	Longitude  float64
+	Latitude   float64
 	Note       string
 }
