@@ -158,3 +158,10 @@ type Setting struct {
 	Enabled bool `gorm:"default:true"`
 	Note    string
 }
+
+type Ruian struct {
+	gorm.Model
+	PostalCode string `gorm:"uniqueIndex:unique_ruian"`
+	Location   string
+	Note       string
+}
