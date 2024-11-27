@@ -45,15 +45,15 @@ type UserFilterRecord struct {
 
 type ItemType struct {
 	gorm.Model
-	Name              string `gorm:"uniqueIndex:unique_item_type"`
-	ParentItemTypeID  int    `gorm:"uniqueIndex:unique_item_type"`
-	CategoryDepth     int    `gorm:"uniqueIndex:unique_item_type"`
-	Data              datatypes.JSON
-	Url               string `gorm:"uniqueIndex:unique_item_type"`
-	Count             int
-	Enabled           bool `gorm:"default:true"`
-	BottomItemTypeIds string
-	Note              string
+	Name             string `gorm:"uniqueIndex:unique_item_type"`
+	ParentItemTypeID int    `gorm:"uniqueIndex:unique_item_type"`
+	CategoryDepth    int    `gorm:"uniqueIndex:unique_item_type"`
+	Data             datatypes.JSON
+	Url              string `gorm:"uniqueIndex:unique_item_type"`
+	Count            int
+	Enabled          bool `gorm:"default:true"`
+	FinalItemTypeIds string
+	Note             string
 }
 
 type PriceType struct {
