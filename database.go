@@ -145,10 +145,11 @@ type ItemAlarmRecord struct {
 
 type ItemWatchlistRecord struct {
 	gorm.Model
-	UserID int `gorm:"uniqueIndex:unique_user_watchlist_record"`
+	UserID int `gorm:"uniqueIndex:unique_user_item_watchlist_record"`
 	User   User
-	ItemID int `gorm:"uniqueIndex:unique_user_watchlist_record"`
+	ItemID sql.NullInt32 `gorm:"uniqueIndex:unique_user__item_watchlist_record, uniqueIndex:unique_user_data_watchlist_record"`
 	Item   Item
+	Data   datatypes.JSON `gorm:"uniqueIndex:unique_user_data_watchlist_record"`
 	Note   string
 }
 
