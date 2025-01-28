@@ -155,7 +155,7 @@ type ItemWatchlistRecord struct {
 	User            User
 	ItemID          sql.NullInt32 `gorm:"uniqueIndex:unique_user_item_watchlist_record;uniqueIndex:unique_user_data_watchlist_record"`
 	Item            Item
-	WatchlistTypeId sql.NullInt32
+	WatchlistTypeId sql.NullInt32 `gorm:"uniqueIndex:unique_user_item_watchlist_record;uniqueIndex:unique_user_data_watchlist_record"`
 	WatchlistType   WatchlistType
 	Data            datatypes.JSON `gorm:"uniqueIndex:unique_user_data_watchlist_record"`
 	Note            string
