@@ -143,14 +143,22 @@ type ItemAlarmRecord struct {
 	Note          string
 }
 
+type WatchlistType struct {
+	gorm.Model
+	Name string `gorm:"uniqueIndex:unique_watchlist_type"`
+	Note string
+}
+
 type ItemWatchlistRecord struct {
 	gorm.Model
-	UserID int `gorm:"uniqueIndex:unique_user_item_watchlist_record"`
-	User   User
-	ItemID sql.NullInt32 `gorm:"uniqueIndex:unique_user_item_watchlist_record;uniqueIndex:unique_user_data_watchlist_record"`
-	Item   Item
-	Data   datatypes.JSON `gorm:"uniqueIndex:unique_user_data_watchlist_record"`
-	Note   string
+	UserID          int `gorm:"uniqueIndex:unique_user_item_watchlist_record"`
+	User            User
+	ItemID          sql.NullInt32 `gorm:"uniqueIndex:unique_user_item_watchlist_record;uniqueIndex:unique_user_data_watchlist_record"`
+	Item            Item
+	WatchlistTypeId sql.NullInt32
+	WatchlistType   WatchlistType
+	Data            datatypes.JSON `gorm:"uniqueIndex:unique_user_data_watchlist_record"`
+	Note            string
 }
 
 type Setting struct {
