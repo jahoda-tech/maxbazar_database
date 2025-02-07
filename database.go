@@ -181,3 +181,11 @@ type Ruian struct {
 	Latitude   float64
 	Note       string
 }
+
+type ItemHistoryRecord struct {
+	gorm.Model
+	ItemID   int `gorm:"index:item_history_record"`
+	Item     Item
+	DateTime time.Time
+	Note     string
+}
