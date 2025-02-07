@@ -187,5 +187,6 @@ type ItemHistoryRecord struct {
 	ItemID   int `gorm:"index:item_history_record"`
 	Item     Item
 	DateTime time.Time
+	Count    int
 	Note     string
 }
