@@ -190,3 +190,18 @@ type ItemHistoryRecord struct {
 	Count    int
 	Note     string
 }
+
+type MaxbazarVisitRecords struct {
+	gorm.Model
+	DateTime time.Time
+	Count    int
+}
+
+type RoadmapRecords struct {
+	gorm.Model
+	Heading string `gorm:"uniqueIndex:unique_roadmap_records"`
+	Text    string
+	Type    string
+	Count   int `gorm:"default:0"`
+	Note    string
+}
