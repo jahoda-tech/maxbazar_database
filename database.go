@@ -203,5 +203,6 @@ type RoadmapRecords struct {
 	Text    string
 	Type    string
 	Count   int `gorm:"default:0"`
+	UserIds string
 	Note    string
 }
