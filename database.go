@@ -193,7 +193,7 @@ type ItemHistoryRecord struct {
 
 type MaxbazarVisitRecords struct {
 	gorm.Model
-	DateTime time.Time
+	DateTime string `gorm:"uniqueIndex:unique_maxbazar_visit_records"`
 	Count    int
 }
 
