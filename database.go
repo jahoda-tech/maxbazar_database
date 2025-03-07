@@ -17,6 +17,7 @@ type User struct {
 	AverageRating  float64
 	Location       string
 	Email          string `gorm:"uniqueIndex:unique_user"`
+	Currency       string
 	Phone          string
 	Note           string
 }
