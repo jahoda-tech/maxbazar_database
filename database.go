@@ -83,6 +83,7 @@ type Item struct {
 	DecreasePriceAmount float64
 	Location            string
 	TemporaryPassword   string
+	Currency            string
 	Public              bool
 	Premium             bool
 	PremiumDateTime     time.Time
