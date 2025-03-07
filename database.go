@@ -57,13 +57,6 @@ type ItemType struct {
 	Note             string
 }
 
-type PriceType struct {
-	gorm.Model
-	Name string `gorm:"uniqueIndex:unique_price_type"`
-	Data datatypes.JSON
-	Note string
-}
-
 type Item struct {
 	gorm.Model
 	Heading             string `gorm:"uniqueIndex:unique_item"`
@@ -74,8 +67,6 @@ type Item struct {
 	TemporaryPhone      string
 	ItemTypeID          int
 	ItemType            ItemType
-	PriceTypeID         int
-	PriceType           PriceType
 	ItemData            datatypes.JSON
 	Price               float64
 	DateTime            time.Time
