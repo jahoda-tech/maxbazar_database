@@ -79,6 +79,8 @@ type Item struct {
 	Public              bool
 	Premium             bool
 	PremiumDateTime     time.Time
+	PremiumLimitCount   int
+	PremiumLimit        bool
 	Note                string
 }
 
