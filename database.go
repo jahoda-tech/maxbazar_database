@@ -103,7 +103,7 @@ type InvoiceRecord struct {
 	PayerName  string
 	ItemID     int
 	Item       Item
-	DateTime   time.Time `gorm:"uniqueIndex:unique_user_invoice_record"`
+	DateTime   time.Time
 	Amount     string
 	Currency   string
 	Note       string
