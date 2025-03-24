@@ -99,14 +99,15 @@ type UserMessageRecord struct {
 
 type InvoiceRecord struct {
 	gorm.Model
-	PayerEmail string
-	PayerName  string
-	ItemID     int
-	Item       Item
-	DateTime   time.Time
-	Amount     string
-	Currency   string
-	Note       string
+	PayerEmail   string
+	PayerName    string
+	PremiumCount int
+	ItemID       int
+	Item         Item
+	DateTime     time.Time
+	Amount       string
+	Currency     string
+	Note         string
 }
 
 type ItemCounterRecord struct {
