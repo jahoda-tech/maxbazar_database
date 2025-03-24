@@ -97,15 +97,16 @@ type UserMessageRecord struct {
 	Note      string
 }
 
-type UserInvoiceRecord struct {
+type InvoiceRecord struct {
 	gorm.Model
-	UserID   int `gorm:"uniqueIndex:unique_user_invoice_record"`
-	User     User
-	ItemID   int `gorm:"uniqueIndex:unique_user_invoice_record"`
-	Item     Item
-	DateTime time.Time `gorm:"uniqueIndex:unique_user_invoice_record"`
-	Text     string
-	Note     string
+	PayerEmail string
+	PayerName  string
+	ItemID     int
+	Item       Item
+	DateTime   time.Time `gorm:"uniqueIndex:unique_user_invoice_record"`
+	Amount     string
+	Currency   string
+	Note       string
 }
 
 type ItemCounterRecord struct {
