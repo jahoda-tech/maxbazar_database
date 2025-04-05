@@ -81,6 +81,7 @@ type Item struct {
 	PremiumDateTime     time.Time
 	PremiumLimitCount   int
 	PremiumLimit        bool
+	VIN                 string
 	Note                string
 }
 
