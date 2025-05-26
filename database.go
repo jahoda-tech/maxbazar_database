@@ -68,17 +68,17 @@ type Item struct {
 	ItemTypeID          int
 	ItemType            ItemType
 	ItemData            datatypes.JSON
-	Price               float64
-	DateTime            time.Time
+	Price               float64   `gorm:"uniqueIndex:unique_item_price"`
+	DateTime            time.Time `gorm:"uniqueIndex:unique_item_date_time"`
 	DeleteAfter         sql.NullTime
 	DecreasePriceAfter  sql.NullTime
 	DecreasePriceAmount float64
-	Location            string
+	Location            string `gorm:"uniqueIndex:unique_item_location"`
 	TemporaryPassword   string
 	Currency            string
 	Public              bool
 	Premium             bool
-	PremiumDateTime     time.Time
+	PremiumDateTime     time.Time `gorm:"uniqueIndex:unique_item_premium_date_time"`
 	PremiumLimitCount   int
 	PremiumLimit        bool
 	VIN                 string
