@@ -65,7 +65,7 @@ type Item struct {
 	User                User
 	TemporaryEmail      string
 	TemporaryPhone      string
-	ItemTypeID          int
+	ItemTypeID          int `gorm:"uniqueIndex:unique_item_type_id"`
 	ItemType            ItemType
 	ItemData            datatypes.JSON
 	Price               float64   `gorm:"uniqueIndex:unique_item_price"`
