@@ -65,7 +65,7 @@ type Item struct {
 	User                User
 	TemporaryEmail      string
 	TemporaryPhone      string
-	ItemTypeID          int `gorm:"index:item_type_id"`
+	ItemTypeID          int
 	ItemType            ItemType
 	ItemData            datatypes.JSON
 	Price               float64   `gorm:"index:item_price"`
@@ -131,9 +131,9 @@ type ItemImageRecord struct {
 
 type ItemAlarmRecord struct {
 	gorm.Model
-	UserID        int `gorm:"uniqueIndex:unique_user_alarm_record"`
+	UserID        int `gorm:"uniqueIndex:unique_user_alarm_record,priority:2"`
 	User          User
-	ItemTypeID    int `gorm:"uniqueIndex:unique_user_alarm_record"`
+	ItemTypeID    int `gorm:"uniqueIndex:unique_user_alarm_record,priority:1"`
 	ItemType      ItemType
 	ItemData      datatypes.JSON
 	StartDateTime time.Time
@@ -182,7 +182,7 @@ type Ruian struct {
 
 type ItemHistoryRecord struct {
 	gorm.Model
-	ItemID   int `gorm:"index:item_history_record"`
+	ItemID   int
 	Item     Item
 	DateTime time.Time
 	Count    int
