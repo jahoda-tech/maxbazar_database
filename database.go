@@ -110,6 +110,7 @@ type InvoiceRecord struct {
 	Amount       string
 	Currency     string
 	Note         string
+	InvoiceData  datatypes.JSON
 }
 
 type ItemCounterRecord struct {
