@@ -67,9 +67,9 @@ type Item struct {
 	TemporaryPhone      string
 	ItemTypeID          int
 	ItemType            ItemType
-	ItemData            datatypes.JSON
-	Price               float64   `gorm:"index:item_price,priority:4"`
-	DateTime            time.Time `gorm:"index:item_date_time"`
+	ItemData            datatypes.JSON `gorm:"type:jsonb"`
+	Price               float64        `gorm:"index:item_price,priority:4"`
+	DateTime            time.Time      `gorm:"index:item_date_time"`
 	DeleteAfter         sql.NullTime
 	DecreasePriceAfter  sql.NullTime
 	DecreasePriceAmount float64
