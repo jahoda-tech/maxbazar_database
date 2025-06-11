@@ -68,7 +68,7 @@ type Item struct {
 	ItemTypeID          int
 	ItemType            ItemType
 	ItemData            datatypes.JSON `gorm:"type:jsonb"`
-	Price               float64        `gorm:"index:item_price_acs,sort:acs;index:item_price_desc,sort:desc"`
+	Price               float64        `gorm:"index:item_price_asc,sort:asc;index:item_price_desc,sort:desc"`
 	DateTime            time.Time
 	DeleteAfter         sql.NullTime
 	DecreasePriceAfter  sql.NullTime
