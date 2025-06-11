@@ -59,8 +59,8 @@ type ItemType struct {
 
 type Item struct {
 	gorm.Model
-	Heading             string `gorm:"uniqueIndex:unique_item;index:item_description,priority:2"`
-	Description         string `gorm:"index:item_description,priority:1"`
+	Heading             string `gorm:"uniqueIndex:unique_item;index:item_description"`
+	Description         string `gorm:"index:item_description"`
 	UserID              int    `gorm:"uniqueIndex:unique_item"`
 	User                User
 	TemporaryEmail      string
@@ -68,17 +68,17 @@ type Item struct {
 	ItemTypeID          int
 	ItemType            ItemType
 	ItemData            datatypes.JSON `gorm:"type:jsonb"`
-	Price               float64        `gorm:"index:item_price,priority:4"`
-	DateTime            time.Time      `gorm:"index:item_date_time"`
+	Price               float64        `gorm:"index:item_price_acs,sort:acs;index:item_price_desc,sort:desc"`
+	DateTime            time.Time
 	DeleteAfter         sql.NullTime
 	DecreasePriceAfter  sql.NullTime
 	DecreasePriceAmount float64
-	Location            string `gorm:"index:item_location,priority:3"`
+	Location            string `gorm:"index:item_location"`
 	TemporaryPassword   string
 	Currency            string
 	Public              bool
 	Premium             bool
-	PremiumDateTime     time.Time `gorm:"index:item_premium_date_time"`
+	PremiumDateTime     time.Time `gorm:"index:item_premium_date_time_desc,sort:desc"`
 	PremiumLimitCount   int
 	PremiumLimit        bool
 	VIN                 string
