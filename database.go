@@ -82,6 +82,7 @@ type Item struct {
 	PremiumLimitCount   int
 	PremiumLimit        bool
 	VIN                 string
+	ShowPhoneNumber     bool
 	Note                string
 }
 
