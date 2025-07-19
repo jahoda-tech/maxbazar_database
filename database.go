@@ -73,7 +73,7 @@ type Item struct {
 	VIN                 string
 	Price               float64
 	DecreasePriceAmount float64
-	UserRating          float64
+	UserRatingAverage   float64
 	Public              bool
 	Premium             bool
 	PremiumLimit        bool
