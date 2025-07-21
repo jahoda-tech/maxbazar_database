@@ -84,8 +84,8 @@ type Item struct {
 	DeleteAfter         sql.NullTime
 	DecreasePriceAfter  sql.NullTime
 	ItemData            datatypes.JSON `gorm:"type:jsonb"`
-	User                User
 	ItemType            ItemType
+	User                User
 }
 
 type UserMessageRecord struct {
